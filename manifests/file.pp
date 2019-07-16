@@ -84,6 +84,7 @@
 # Published under the Apache License, Version 2.0
 #
 define deploy::file (
+  $source,
   $target,
   $url,
   $command         = undef,
@@ -108,7 +109,7 @@ define deploy::file (
     }
   }
 
-  $file = $title
+  $file = $source
 
   # Very experimental right now. Attemt to do some kind of version management.
   if $version != undef and $package != undef {
